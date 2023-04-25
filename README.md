@@ -56,6 +56,9 @@ Cucumber Jars
 **How to run?**
 
 Set required option in tags to execute required scenario
+
 Right click on -> TestRunner.java file and select Run as 'Junit Test'
-Report:
+
+**Report:**
+
 Html report generated can be seen at this path "..\target\cucumber-reports\ReqRespDashboard\index.html"
