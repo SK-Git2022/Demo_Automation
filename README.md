@@ -39,6 +39,7 @@ Tags to be chosen for execution-> @RestApiGet,@RestApiPost
 Technologies used
 
 Language - Java
+
 Tools
 Eclipse IDE
 Selenium for UI automation
@@ -48,6 +49,7 @@ Apache Maven for build automation
 Cucumber runner to trigger execution
 
 How to run?
+
 Set required option in tags to execute required scenario
 Right click on -> TestRunner.java file and select Run as 'Junit Test'
 Report:
