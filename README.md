@@ -2,7 +2,7 @@ ReqResp Automation
 
 Framework : BDD Framework
 
-                                                                **Phase 1**
+ **Phase 1**
                                                                 
 GUI Automation:-
 Automated below 2 scenarios:-
@@ -24,27 +24,34 @@ o Should provide Upgrade details
 File to be refered-> "..\com\techm\ReqResp\features\GUITests.feature"
 Tags to be chosen for execution-> @HomePageSupportButton, @HomePageGetOptions
 
-                                                               ** Phase 2**
+**Phase 2**
                                                                 
 Created a comparator that compares files with result generated file and print result in the console.
 File to be refered-> "..\com\techm\ReqResp\features\FileComparisons.feature"
 Tags to be chosen for execution-> @PositionReportFileCompare
 
-                                                                **Phase 3**
+**Phase 3**
                                                                 
 Automated the Get and Post REST API methods using rest assured.
 File to be refered-> "..\com\techm\ReqResp\features\RestApiTests.feature"
 Tags to be chosen for execution-> @RestApiGet,@RestApiPost
 
 **Technologies used**
+
 Language - Java
 Tools-
+
 Eclipse IDE
+
 Selenium for UI automation
+
 Rest assured for API automation
+
 CSV for file comparision
+
 Apache Maven for build automation
-Cucumber runner to trigger execution
+
+Cucumber Jars
 
 **How to run?**
 
