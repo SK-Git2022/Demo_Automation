@@ -37,10 +37,8 @@ File to be refered-> "..\com\techm\ReqResp\features\RestApiTests.feature"
 Tags to be chosen for execution-> @RestApiGet,@RestApiPost
 
 Technologies used
-
 Language - Java
-
-Tools
+Tools-
 Eclipse IDE
 Selenium for UI automation
 Rest assured for API automation
