@@ -52,7 +52,7 @@ CSV for file comparision
 
 Apache Maven for build automation
 
-Cucumber Jars
+Cucumber dependencies
 
 **How to run?**
 
