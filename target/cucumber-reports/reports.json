@@ -1,0 +1,674 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2023-04-25T00:33:43.085Z",
+        "line": 5,
+        "name": "verify file contains correct output",
+        "description": "",
+        "id": "validating-apis;verify-file-contains-correct-output",
+        "after": [
+          {
+            "result": {
+              "duration": 247900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinition.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 42457000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "Files \"InstrumentDetails.csv\" and \"PositionDetails.csv\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"InstrumentDetails.csv\"",
+                  "offset": 6
+                },
+                {
+                  "val": "\"PositionDetails.csv\"",
+                  "offset": 34
+                }
+              ],
+              "location": "StepDefinition.files_and(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 918000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "processed in the system",
+            "match": {
+              "location": "StepDefinition.processed_in_the_system()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 34621500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "verify \"PositionReport.csv\" file",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"PositionReport.csv\"",
+                  "offset": 7
+                }
+              ],
+              "location": "StepDefinition.verify_file(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@FileCompare"
+          },
+          {
+            "name": "@PositionReportFileCompare"
+          }
+        ]
+      }
+    ],
+    "name": "Validating APIs",
+    "description": "",
+    "id": "validating-apis",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/com/techm/ReqResp/features/FileComparisons.feature",
+    "tags": [
+      {
+        "name": "@FileCompare",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2023-04-25T00:33:43.209Z",
+        "line": 13,
+        "name": "Verify if User is able to click on various get options",
+        "description": "",
+        "id": "validating-apis;verify-if-user-is-able-to-click-on-various-get-options;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 484424800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinition.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 3388295800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "\"Chrome\" browser is opened",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Chrome\"",
+                  "offset": 0
+                }
+              ],
+              "location": "StepDefinition.browser_is_opened(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2639654000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user opens application url in the browser",
+            "match": {
+              "location": "StepDefinition.user_opens_application_url_in_the_browser()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 112214800,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user click on \"List users\" with \"GET\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"List users\"",
+                  "offset": 14
+                },
+                {
+                  "val": "\"GET\"",
+                  "offset": 32
+                }
+              ],
+              "location": "StepDefinition.user_click_on_with_http_request(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3008864200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "users sees \"/api/users?page\u003d2\" and \"200\" and \"total,12\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/api/users?page\u003d2\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"200\"",
+                  "offset": 35
+                },
+                {
+                  "val": "\"total,12\"",
+                  "offset": 45
+                }
+              ],
+              "location": "StepDefinition.users_sees_and_and(String,String,String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@GUITests"
+          },
+          {
+            "name": "@HomePageGetOptions"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-04-25T00:33:52.870Z",
+        "line": 14,
+        "name": "Verify if User is able to click on various get options",
+        "description": "",
+        "id": "validating-apis;verify-if-user-is-able-to-click-on-various-get-options;;3",
+        "after": [
+          {
+            "result": {
+              "duration": 393033200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinition.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1239670800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "\"Chrome\" browser is opened",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Chrome\"",
+                  "offset": 0
+                }
+              ],
+              "location": "StepDefinition.browser_is_opened(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2836620300,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user opens application url in the browser",
+            "match": {
+              "location": "StepDefinition.user_opens_application_url_in_the_browser()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 107132700,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "user click on \"List \u003cresource\u003e\" with \"GET\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"List \u003cresource\u003e\"",
+                  "offset": 14
+                },
+                {
+                  "val": "\"GET\"",
+                  "offset": 37
+                }
+              ],
+              "location": "StepDefinition.user_click_on_with_http_request(String,String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 200354700,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "users sees \"/api/unknown\" and \"200\" and \"total,12\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"/api/unknown\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"200\"",
+                  "offset": 30
+                },
+                {
+                  "val": "\"total,12\"",
+                  "offset": 40
+                }
+              ],
+              "location": "StepDefinition.users_sees_and_and(String,String,String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@GUITests"
+          },
+          {
+            "name": "@HomePageGetOptions"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-04-25T00:33:57.653Z",
+        "line": 38,
+        "name": "verify Support button is displayed",
+        "description": "",
+        "id": "validating-apis;verify-support-button-is-displayed",
+        "after": [
+          {
+            "result": {
+              "duration": 240320500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinition.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1174225500,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "\"Chrome\" browser is opened",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Chrome\"",
+                  "offset": 0
+                }
+              ],
+              "location": "StepDefinition.browser_is_opened(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2733025800,
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "user opens application url in the browser",
+            "match": {
+              "location": "StepDefinition.user_opens_application_url_in_the_browser()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 113633900,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "user click on SupportReqResp button",
+            "match": {
+              "location": "StepDefinition.user_click_on_SupportReqResp_button()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 349716900,
+              "status": "passed"
+            },
+            "line": 42,
+            "name": "user sees one time support option",
+            "match": {
+              "location": "StepDefinition.user_sees_one_time_support_option()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 164229300,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "sees monthlysupport option",
+            "match": {
+              "location": "StepDefinition.sees_monthlysupport_option()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 66585200,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "sees SupportReqResp button to upgrade",
+            "match": {
+              "location": "StepDefinition.sees_SupportReqResp_button_to_upgrade()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@GUITests"
+          },
+          {
+            "name": "@HomePageSupportButton"
+          }
+        ]
+      }
+    ],
+    "name": "Validating APIs",
+    "description": "",
+    "id": "validating-apis",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/com/techm/ReqResp/features/GUITests.feature",
+    "tags": [
+      {
+        "name": "@GUITests",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  },
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2023-04-25T00:34:02.502Z",
+        "line": 5,
+        "name": "testRestAPI PostMethod",
+        "description": "",
+        "id": "validating-apis;testrestapi-postmethod",
+        "after": [
+          {
+            "result": {
+              "duration": 67400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinition.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 511197100,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "AddUserPayload",
+            "match": {
+              "location": "StepDefinition.adduserpayload()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1496606000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user calls \"post\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"post\"",
+                  "offset": 11
+                }
+              ],
+              "location": "StepDefinition.user_calls_http_request(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 27654600,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the API call got success with status code 201",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 42
+                }
+              ],
+              "location": "StepDefinition.the_API_call_got_success_with_status_code(Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 20713500,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "\"name\" in response body is \"morpheus\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"name\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"morpheus\"",
+                  "offset": 27
+                }
+              ],
+              "location": "StepDefinition.in_response_body_is(String,String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@RestApiTests"
+          },
+          {
+            "name": "@RestApiPost"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-04-25T00:34:04.567Z",
+        "line": 12,
+        "name": "testRestAPI PostMethod",
+        "description": "",
+        "id": "validating-apis;testrestapi-postmethod",
+        "after": [
+          {
+            "result": {
+              "duration": 53900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "StepDefinition.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2429200,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "PathParameter 2",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 14
+                }
+              ],
+              "location": "StepDefinition.pathparameter(Integer)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 88347700,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "user calls \"get\" http request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"get\"",
+                  "offset": 11
+                }
+              ],
+              "location": "StepDefinition.user_calls_http_request(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2412500,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "the API call got success with status code 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 42
+                }
+              ],
+              "location": "StepDefinition.the_API_call_got_success_with_status_code(Integer)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 30027300,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "\"id\" in response body is \"2\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"id\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"2\"",
+                  "offset": 25
+                }
+              ],
+              "location": "StepDefinition.in_response_body_is(String,String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@RestApiTests"
+          },
+          {
+            "name": "@RestApiGet"
+          }
+        ]
+      }
+    ],
+    "name": "Validating APIs",
+    "description": "",
+    "id": "validating-apis",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/com/techm/ReqResp/features/RestApiTests.feature",
+    "tags": [
+      {
+        "name": "@RestApiTests",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]

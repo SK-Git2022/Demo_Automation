@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="21.598611">
+    <testcase classname="Validating APIs" name="verify file contains correct output" time="0.11755">
+        <system-out><![CDATA[Given Files "InstrumentDetails.csv" and "PositionDetails.csv"...............passed
+When processed in the system................................................passed
+Then verify "PositionReport.csv" file.......................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Validating APIs" name="Verify if User is able to click on various get options" time="9.660964">
+        <system-out><![CDATA[Given "Chrome" browser is opened............................................passed
+When user opens application url in the browser..............................passed
+Then user click on "List users" with "GET" http request.....................passed
+Then users sees "/api/users?page=2" and "200" and "total,12"................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Validating APIs" name="Verify if User is able to click on various get options 2" time="4.781187">
+        <system-out><![CDATA[Given "Chrome" browser is opened............................................passed
+When user opens application url in the browser..............................passed
+Then user click on "List <resource>" with "GET" http request................passed
+Then users sees "/api/unknown" and "200" and "total,12".....................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Validating APIs" name="verify Support button is displayed" time="4.846906">
+        <system-out><![CDATA[Given "Chrome" browser is opened............................................passed
+When user opens application url in the browser..............................passed
+Then user click on SupportReqResp button....................................passed
+Then user sees one time support option......................................passed
+And sees monthlysupport option..............................................passed
+And sees SupportReqResp button to upgrade...................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Validating APIs" name="testRestAPI PostMethod" time="2.064949">
+        <system-out><![CDATA[Given AddUserPayload........................................................passed
+When user calls "post" http request.........................................passed
+Then the API call got success with status code 201..........................passed
+And "name" in response body is "morpheus"...................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Validating APIs" name="testRestAPI PostMethod 2" time="0.127055">
+        <system-out><![CDATA[Given PathParameter 2.......................................................passed
+When user calls "get" http request..........................................passed
+Then the API call got success with status code 200..........................passed
+And "id" in response body is "2"............................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
