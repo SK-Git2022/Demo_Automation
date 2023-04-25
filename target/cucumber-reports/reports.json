@@ -3,7 +3,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2023-04-24T18:52:10.305Z",
+        "start_timestamp": "2023-04-25T00:33:43.085Z",
         "line": 5,
         "name": "verify file contains correct output",
         "description": "",
@@ -11,7 +11,7 @@
         "after": [
           {
             "result": {
-              "duration": 262800,
+              "duration": 247900,
               "status": "passed"
             },
             "match": {
@@ -24,7 +24,7 @@
         "steps": [
           {
             "result": {
-              "duration": 51575300,
+              "duration": 42457000,
               "status": "passed"
             },
             "line": 6,
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 712900,
+              "duration": 918000,
               "status": "passed"
             },
             "line": 7,
@@ -58,7 +58,7 @@
           },
           {
             "result": {
-              "duration": 26343800,
+              "duration": 34621500,
               "status": "passed"
             },
             "line": 8,
@@ -105,7 +105,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2023-04-24T18:52:10.443Z",
+        "start_timestamp": "2023-04-25T00:33:43.209Z",
         "line": 13,
         "name": "Verify if User is able to click on various get options",
         "description": "",
@@ -113,7 +113,7 @@
         "after": [
           {
             "result": {
-              "duration": 734915300,
+              "duration": 484424800,
               "status": "passed"
             },
             "match": {
@@ -126,7 +126,7 @@
         "steps": [
           {
             "result": {
-              "duration": 3702059400,
+              "duration": 3388295800,
               "status": "passed"
             },
             "line": 6,
@@ -144,7 +144,7 @@
           },
           {
             "result": {
-              "duration": 4706648000,
+              "duration": 2639654000,
               "status": "passed"
             },
             "line": 7,
@@ -156,7 +156,7 @@
           },
           {
             "result": {
-              "duration": 124414000,
+              "duration": 112214800,
               "status": "passed"
             },
             "line": 8,
@@ -178,7 +178,7 @@
           },
           {
             "result": {
-              "duration": 2754064500,
+              "duration": 3008864200,
               "status": "passed"
             },
             "line": 9,
@@ -213,7 +213,7 @@
         ]
       },
       {
-        "start_timestamp": "2023-04-24T18:52:22.500Z",
+        "start_timestamp": "2023-04-25T00:33:52.870Z",
         "line": 14,
         "name": "Verify if User is able to click on various get options",
         "description": "",
@@ -221,7 +221,7 @@
         "after": [
           {
             "result": {
-              "duration": 585589600,
+              "duration": 393033200,
               "status": "passed"
             },
             "match": {
@@ -234,7 +234,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1617556900,
+              "duration": 1239670800,
               "status": "passed"
             },
             "line": 6,
@@ -252,7 +252,7 @@
           },
           {
             "result": {
-              "duration": 4889760800,
+              "duration": 2836620300,
               "status": "passed"
             },
             "line": 7,
@@ -264,7 +264,7 @@
           },
           {
             "result": {
-              "duration": 145291100,
+              "duration": 107132700,
               "status": "passed"
             },
             "line": 8,
@@ -286,9 +286,8 @@
           },
           {
             "result": {
-              "error_message": "io.restassured.path.json.exception.JsonPathException: Failed to parse the JSON document\r\n\tat io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1002)\r\n\tat io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)\r\n\tat io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)\r\n\tat io.restassured.path.json.JsonPath.get(JsonPath.java:202)\r\n\tat com.techm.ReqResp.pageobjects.HomePage.verifyDetailsForEachMethod(HomePage.java:64)\r\n\tat com.techm.ReqResp.stepDefs.StepDefinition.users_sees_and_and(StepDefinition.java:129)\r\n\tat ✽.users sees \"/api/unknown\" and \"200\" and \"total,12\"(file:src/test/java/com/techm/ReqResp/features/GUITests.feature:9)\r\nCaused by: java.lang.IllegalArgumentException: The JSON input text should neither be null nor empty.\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)\r\n\tat org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)\r\n\tat org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)\r\n\tat org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:58)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)\r\n\tat org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)\r\n\tat io.restassured.internal.path.json.ConfigurableJsonSlurper.parseText(ConfigurableJsonSlurper.groovy:80)\r\n\tat io.restassured.path.json.JsonPath$4$1.method(JsonPath.java:965)\r\n\tat io.restassured.path.json.JsonPath$ExceptionCatcher.invoke(JsonPath.java:1000)\r\n\tat io.restassured.path.json.JsonPath$4.doParseWith(JsonPath.java:967)\r\n\tat io.restassured.path.json.JsonPath$JsonParser.parseWith(JsonPath.java:1047)\r\n\tat io.restassured.path.json.JsonPath.get(JsonPath.java:202)\r\n\tat com.techm.ReqResp.pageobjects.HomePage.verifyDetailsForEachMethod(HomePage.java:64)\r\n\tat com.techm.ReqResp.stepDefs.StepDefinition.users_sees_and_and(StepDefinition.java:129)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)\r\n\tat java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:568)\r\n\tat cucumber.runtime.Utils$1.call(Utils.java:26)\r\n\tat cucumber.runtime.Timeout.timeout(Timeout.java:16)\r\n\tat cucumber.runtime.Utils.invoke(Utils.java:20)\r\n\tat cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)\r\n\tat cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)\r\n\tat cucumber.runner.TestStep.executeStep(TestStep.java:65)\r\n\tat cucumber.runner.TestStep.run(TestStep.java:50)\r\n\tat cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)\r\n\tat cucumber.runner.TestCase.run(TestCase.java:46)\r\n\tat cucumber.runner.Runner.runPickle(Runner.java:50)\r\n\tat io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:146)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:68)\r\n\tat io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:23)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:144)\r\n\tat io.cucumber.junit.Cucumber.runChild(Cucumber.java:65)\r\n\tat org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)\r\n\tat org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)\r\n\tat org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)\r\n\tat org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)\r\n\tat org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)\r\n\tat io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:174)\r\n\tat org.junit.runners.ParentRunner.run(ParentRunner.java:309)\r\n\tat org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:93)\r\n\tat org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:756)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452)\r\n\tat org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)\r\n",
-              "duration": 164478800,
-              "status": "failed"
+              "duration": 200354700,
+              "status": "passed"
             },
             "line": 9,
             "name": "users sees \"/api/unknown\" and \"200\" and \"total,12\"",
@@ -322,7 +321,7 @@
         ]
       },
       {
-        "start_timestamp": "2023-04-24T18:52:29.928Z",
+        "start_timestamp": "2023-04-25T00:33:57.653Z",
         "line": 38,
         "name": "verify Support button is displayed",
         "description": "",
@@ -330,7 +329,7 @@
         "after": [
           {
             "result": {
-              "duration": 713029800,
+              "duration": 240320500,
               "status": "passed"
             },
             "match": {
@@ -343,7 +342,7 @@
         "steps": [
           {
             "result": {
-              "duration": 1823899100,
+              "duration": 1174225500,
               "status": "passed"
             },
             "line": 39,
@@ -361,7 +360,7 @@
           },
           {
             "result": {
-              "duration": 4588710300,
+              "duration": 2733025800,
               "status": "passed"
             },
             "line": 40,
@@ -373,7 +372,7 @@
           },
           {
             "result": {
-              "duration": 151573500,
+              "duration": 113633900,
               "status": "passed"
             },
             "line": 41,
@@ -385,7 +384,7 @@
           },
           {
             "result": {
-              "duration": 299483200,
+              "duration": 349716900,
               "status": "passed"
             },
             "line": 42,
@@ -397,7 +396,7 @@
           },
           {
             "result": {
-              "duration": 156327200,
+              "duration": 164229300,
               "status": "passed"
             },
             "line": 43,
@@ -409,7 +408,7 @@
           },
           {
             "result": {
-              "duration": 92094700,
+              "duration": 66585200,
               "status": "passed"
             },
             "line": 44,
@@ -450,7 +449,7 @@
     "line": 2,
     "elements": [
       {
-        "start_timestamp": "2023-04-24T18:52:37.759Z",
+        "start_timestamp": "2023-04-25T00:34:02.502Z",
         "line": 5,
         "name": "testRestAPI PostMethod",
         "description": "",
@@ -458,7 +457,7 @@
         "after": [
           {
             "result": {
-              "duration": 80900,
+              "duration": 67400,
               "status": "passed"
             },
             "match": {
@@ -471,7 +470,7 @@
         "steps": [
           {
             "result": {
-              "duration": 526485000,
+              "duration": 511197100,
               "status": "passed"
             },
             "line": 6,
@@ -483,7 +482,7 @@
           },
           {
             "result": {
-              "duration": 1882717600,
+              "duration": 1496606000,
               "status": "passed"
             },
             "line": 7,
@@ -501,7 +500,7 @@
           },
           {
             "result": {
-              "duration": 43463100,
+              "duration": 27654600,
               "status": "passed"
             },
             "line": 8,
@@ -519,7 +518,7 @@
           },
           {
             "result": {
-              "duration": 23309600,
+              "duration": 20713500,
               "status": "passed"
             },
             "line": 9,
@@ -550,7 +549,7 @@
         ]
       },
       {
-        "start_timestamp": "2023-04-24T18:52:40.244Z",
+        "start_timestamp": "2023-04-25T00:34:04.567Z",
         "line": 12,
         "name": "testRestAPI PostMethod",
         "description": "",
@@ -558,7 +557,7 @@
         "after": [
           {
             "result": {
-              "duration": 40800,
+              "duration": 53900,
               "status": "passed"
             },
             "match": {
@@ -571,7 +570,7 @@
         "steps": [
           {
             "result": {
-              "duration": 4781500,
+              "duration": 2429200,
               "status": "passed"
             },
             "line": 13,
@@ -589,7 +588,7 @@
           },
           {
             "result": {
-              "duration": 430682900,
+              "duration": 88347700,
               "status": "passed"
             },
             "line": 14,
@@ -607,7 +606,7 @@
           },
           {
             "result": {
-              "duration": 1693800,
+              "duration": 2412500,
               "status": "passed"
             },
             "line": 15,
@@ -625,7 +624,7 @@
           },
           {
             "result": {
-              "duration": 19809500,
+              "duration": 30027300,
               "status": "passed"
             },
             "line": 16,

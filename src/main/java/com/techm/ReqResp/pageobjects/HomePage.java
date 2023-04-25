@@ -53,6 +53,7 @@ public class HomePage extends BaseClass {
 		scrollIntoView(response);
 		
 		WebElement responseJson=driver.findElement(By.xpath("//div[@class='output']//div[@class='response']//pre[@data-key='output-response']"));
+		scrollIntoView(response);
 		String jsonOutput=responseJson.getText().toString();
 
 		WebElement reqUrlem=driver.findElement(By.xpath("//div[@class='request']//a/span"));
