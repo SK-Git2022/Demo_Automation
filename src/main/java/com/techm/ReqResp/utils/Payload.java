@@ -15,7 +15,6 @@ public class Payload {
 			payload = FileUtils.readFileToString(
 					new File(System.getProperty("user.dir")+"\\src\\test\\java\\com\\techm\\ReqResp\\resources\\PostJsonPayLoadFile.txt"));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return payload;		
