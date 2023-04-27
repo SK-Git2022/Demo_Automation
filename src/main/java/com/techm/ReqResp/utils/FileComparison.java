@@ -11,11 +11,13 @@ import org.apache.logging.log4j.Logger;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 
+import io.cucumber.java.Scenario;
+
 public class FileComparison {
 	
 	private static final Logger logger = LogManager.getLogger(FileComparison.class);
 	
-	public static void compareTwoFiles() {
+	public static void compareTwoFiles(Scenario scenario) {
 		String filePath=System.getProperty("user.dir") +"\\src\\test\\java\\com\\techm\\ReqResp\\resources\\";
 	LinkedHashMap<String, String> positionMap=new LinkedHashMap<String, String>();
 		LinkedHashMap<String, String> instruMentsMap=new LinkedHashMap<String, String>();
@@ -38,24 +40,23 @@ public class FileComparison {
 									 int totalMultiplication=Integer.parseInt(positionMap.get("Quantity"))*Integer.parseInt(instruMentsMap.get("Unit Price"));
 									 if(totalMultiplication!=Integer.parseInt(columns[column])) {
 										 System.out.println("Wrong calculation found, Please cross check Total Price==>"+positionMap.get("Quantity")+"*"+instruMentsMap.get("Unit Price"));
-										 logger.error("Wrong calculation found, Please cross check Total Price==>"+positionMap.get("Quantity")+"*"+instruMentsMap.get("Unit Price"));
+										 scenario.log("Wrong calculation found, Please cross check Total Price==>"+positionMap.get("Quantity")+"*"+instruMentsMap.get("Unit Price"));
 									 }
 								}
 								sb.append(allData.get(0)[column]+"==>"+columns[column]+" ");
 								//System.out.println(allData.get(0)[column]+"==>"+columns[column]);
 							}		
 							System.out.println("**********************PositionReport Contents  Row==>"+row+"********************************");
-							logger.info("**********************PositionReport Contents  Row==>"+row+"********************************");
-							System.out.println(sb.toString());		
-							logger.info(sb.toString());	
-							logger.info("***************************************************************************************\n");
+							System.out.println(sb.toString());	
+							scenario.log("*************`*********PositionReport Contents  Row==>"+row+"********************************");
+							scenario.log(sb.toString());										
 							System.out.println("***************************************************************************************\n");
 						} else {
-							logger.error("Instrument.csv file does not contain required data");	
+							scenario.log("Instrument.csv file does not contain required data");
 							System.out.println("Instrument.csv file does not contain required data");
 						}
 					} else{
-						logger.error("PositionDetail.csv file does not contain required data");							
+						scenario.log("PositionDetail.csv file does not contain required data");							
 						System.out.println("PositionDetail.csv file does not contain required data");
 					}					
 				

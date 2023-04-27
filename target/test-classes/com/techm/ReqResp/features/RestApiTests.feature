@@ -13,4 +13,4 @@ Feature: Validating APIs
    Given PathParameter 2
    When user calls "get" http request
    Then the API call got success with status code 200
-   And "id" in response body is "2"
+   And "data.id" in response body is "2"

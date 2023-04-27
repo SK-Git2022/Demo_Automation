@@ -50,11 +50,13 @@ public class BaseClass {
 	}
 	
 	protected Boolean isElementDisplayed(By by) {
+		waitForElement(by);
 		scrollToElement(by);
 		return driver.findElement(by).isDisplayed();
 	}
 	
 	protected void clickElement(By by) {
+		waitForElement(by);
 		scrollToElement(by);
 		driver.findElement(by).click();
 	}

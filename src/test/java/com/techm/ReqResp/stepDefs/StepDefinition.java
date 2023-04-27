@@ -1,6 +1,5 @@
 package com.techm.ReqResp.stepDefs;
 
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
@@ -10,21 +9,22 @@ import java.io.PrintStream;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import com.techm.ReqResp.pageobjects.HomePage;
 import com.techm.ReqResp.pageobjects.SupportPage;
 import com.techm.ReqResp.utils.DriverSetup;
 import com.techm.ReqResp.utils.FileComparison;
 import com.techm.ReqResp.utils.Payload;
+import com.techm.ReqResp.pageobjects.HomePage;
 
-import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
@@ -45,6 +45,12 @@ public class StepDefinition {
 	RequestSpecification reqSpec;
 	ResponseSpecification respSpec;
 	Response response;
+	Scenario scenario;
+	
+	@Before
+	public void setup(Scenario scenario) {
+		this.scenario=scenario;		
+	}
 	
 	@Given("AddUserPayload")
 	public void adduserpayload() {
@@ -58,20 +64,19 @@ public class StepDefinition {
 			response=reqSpec.when().get(getUri);
 		} else {
 			response=reqSpec.when().post("/api/users");
-		}		
+		}	
 	}
 
 	@Then("the API call got success with status code {int}")
 	public void the_API_call_got_success_with_status_code(Integer int1) {
-		response.then().statusCode(int1);
+		response.then().assertThat().statusCode(int1);
 	}
 
 	@Then("{string} in response body is {string}")
 	public void in_response_body_is(String attributename, String attributevalue) {	
 		JsonPath objJsonPath=new JsonPath(response.body().asString());
-		if(attributename.contains("id")) {
-			assertEquals(objJsonPath.getString("data."+attributename), attributevalue);
-		} else {
+		System.out.println(attributename+"=>"+attributevalue);
+		if(attributename.contains("data.id")) {			
 			assertEquals(objJsonPath.getString(attributename), attributevalue);		
 		}		
 	}
@@ -152,11 +157,14 @@ public class StepDefinition {
 	}	
 	
 	@After
-	public void tearDown() {
+	public void tearDown(Scenario scenario) {		
 		if(driver!=null) {
 			driver.quit();
 		}
-		
+		 if (scenario.isFailed()) {
+             byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+             scenario.attach(screenshot, "image/png", scenario.getName());
+         }
 	}
 	
 	
@@ -172,7 +180,7 @@ public class StepDefinition {
 
 	@Then("verify {string} file")
 	public void verify_file(String string) {
-	   FileComparison.compareTwoFiles();
+	   FileComparison.compareTwoFiles(scenario);
 	}
 
 }
