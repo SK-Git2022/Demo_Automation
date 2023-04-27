@@ -54,15 +54,19 @@ public class HomePage extends BaseClass {
 		
 		WebElement responseJson=driver.findElement(By.xpath("//div[@class='output']//div[@class='response']//pre[@data-key='output-response']"));
 		scrollIntoView(response);
-		String jsonOutput=responseJson.getText().toString();
+		String jsonOutput=responseJson.getText().trim();
 
 		WebElement reqUrlem=driver.findElement(By.xpath("//div[@class='request']//a/span"));
 		assertEquals(reqUrl, reqUrlem.getText().trim());		
 		
 		JsonPath objJsonPath=new JsonPath(jsonOutput);
+		System.out.println(jsonOutput);
+		System.out.println(valueToBeVerifiedInResponse.split(",")[0]);
 		
 		if(!valueToBeVerifiedInResponse.contains("{}")) {
-			assertEquals(String.valueOf(objJsonPath.get(valueToBeVerifiedInResponse.split(",")[0])), valueToBeVerifiedInResponse.split(",")[1]);
+			String attributeValueFromJson=objJsonPath.getString(valueToBeVerifiedInResponse.split(",")[0]);
+			String attributeValue=valueToBeVerifiedInResponse.split(",")[1];
+			assertEquals(attributeValueFromJson, attributeValue);
 		}	
 	
 	}	
