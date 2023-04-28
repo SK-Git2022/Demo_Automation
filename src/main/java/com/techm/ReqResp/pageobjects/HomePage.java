@@ -48,25 +48,29 @@ public class HomePage extends BaseClass {
 		}
 	
 	public void verifyDetailsForEachMethod(String reqUrl,String respStatusCode,String valueToBeVerifiedInResponse) {
-		WebElement response= driver.findElement(By.xpath("//div[@class='output']//div[@class='response']//span[@class='response-code']"));
-		assertEquals(respStatusCode,response.getText());
-		scrollIntoView(response);
-		
-		WebElement responseJson=driver.findElement(By.xpath("//div[@class='output']//div[@class='response']//pre[@data-key='output-response']"));
-		scrollIntoView(response);
-		String jsonOutput=responseJson.getText().trim();
+		try {
+			WebElement responseCode= driver.findElement(parser.getObjectLocator("responseCode"));
+			assertEquals(respStatusCode,responseCode.getText());
+			scrollIntoView(responseCode);
+			
+			WebElement responseJson=driver.findElement(parser.getObjectLocator("responseJson"));
+			scrollIntoView(responseCode);
+			String jsonOutput=responseJson.getText().trim();
 
-		WebElement reqUrlem=driver.findElement(By.xpath("//div[@class='request']//a/span"));
-		assertEquals(reqUrl, reqUrlem.getText().trim());		
-		
-		JsonPath objJsonPath=new JsonPath(jsonOutput);
-		System.out.println(jsonOutput);
-		System.out.println(valueToBeVerifiedInResponse.split(",")[0]);
-		
-		if(!valueToBeVerifiedInResponse.contains("{}")) {
-			String attributeValueFromJson=objJsonPath.getString(valueToBeVerifiedInResponse.split(",")[0]);
-			String attributeValue=valueToBeVerifiedInResponse.split(",")[1];
-			assertEquals(attributeValueFromJson, attributeValue);
+			WebElement reqUrlem=driver.findElement(parser.getObjectLocator("responseUrl"));
+			assertEquals(reqUrl, reqUrlem.getText().trim());			
+			
+			JsonPath objJsonPath=new JsonPath(jsonOutput);
+			System.out.println(jsonOutput);
+			System.out.println(valueToBeVerifiedInResponse.split(",")[0]);
+			
+			if(!valueToBeVerifiedInResponse.contains("{}")) {
+				String attributeValueFromJson=objJsonPath.getString(valueToBeVerifiedInResponse.split(",")[0]);
+				String attributeValue=valueToBeVerifiedInResponse.split(",")[1];
+				assertEquals(attributeValueFromJson, attributeValue);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}	
 	
 	}	

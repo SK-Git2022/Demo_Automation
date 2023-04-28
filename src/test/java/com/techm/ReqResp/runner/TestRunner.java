@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions;
 tags = ("@RestApiGet or @RestApiPost or @PositionReportFileCompare or @HomePageGetOptions or @HomePageSupportButton"), dryRun = false,plugin = {"pretty","json:target/cucumber-reports/reports.json",
         "junit:target/cucumber-reports/Cucumber.xml",
         "html:target/cucumber-reports/ReqRespDashboard.html"},
-monochrome = true,publish = true)
+monochrome = true)
 public class TestRunner {	
 	
 }

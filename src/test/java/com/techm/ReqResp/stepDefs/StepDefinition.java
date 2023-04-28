@@ -34,37 +34,37 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
 public class StepDefinition {
-	
+
 	private static final Logger logger = LogManager.getLogger(StepDefinition.class);
-	
-	private WebDriver driver;	
-	static String getUri="/api/users/";
-	
+
+	private WebDriver driver;
+	static String getUri = "/api/users/";
+
 	SupportPage objSupportPage;
 	HomePage objHomePage;
 	RequestSpecification reqSpec;
 	ResponseSpecification respSpec;
 	Response response;
 	Scenario scenario;
-	
+
 	@Before
 	public void setup(Scenario scenario) {
-		this.scenario=scenario;		
+		this.scenario = scenario;
 	}
-	
+
 	@Given("AddUserPayload")
 	public void adduserpayload() {
-	    // Write code here that turns the phrase above into concrete actions
+		// Write code here that turns the phrase above into concrete actions
 		reqSpec = given().log().all().spec(getRequestSpecBuilder()).body(Payload.addPayload());
 	}
 
 	@When("user calls {string} http request")
 	public void user_calls_http_request(String string) {
-		if(string.equals("get")) {
-			response=reqSpec.when().get(getUri);
+		if (string.equals("get")) {
+			response = reqSpec.when().get(getUri);
 		} else {
-			response=reqSpec.when().post("/api/users");
-		}	
+			response = reqSpec.when().post("/api/users");
+		}
 	}
 
 	@Then("the API call got success with status code {int}")
@@ -73,26 +73,26 @@ public class StepDefinition {
 	}
 
 	@Then("{string} in response body is {string}")
-	public void in_response_body_is(String attributename, String attributevalue) {	
-		JsonPath objJsonPath=new JsonPath(response.body().asString());
-		System.out.println(attributename+"=>"+attributevalue);
-		if(attributename.contains("data.id")) {			
-			assertEquals(objJsonPath.getString(attributename), attributevalue);		
-		}		
+	public void in_response_body_is(String attributename, String attributevalue) {
+		JsonPath objJsonPath = new JsonPath(response.body().asString());
+		System.out.println(attributename + "=>" + attributevalue);
+		if (attributename.contains("data.id")) {
+			assertEquals(objJsonPath.getString(attributename), attributevalue);
+		}
 	}
-	
+
 	@Given("PathParameter {int}")
 	public void pathparameter(Integer int1) {
-		reqSpec =given().log().all().spec(getRequestSpecBuilder());
-		getUri+="2";
+		reqSpec = given().log().all().spec(getRequestSpecBuilder());
+		getUri += "2";
 	}
-	
+
 	public RequestSpecification getRequestSpecBuilder() {
 		RequestSpecification objSpecBuiler = null;
 		try {
 			PrintStream objPrintStream = new PrintStream(new FileOutputStream("logging.txt"));
 			objSpecBuiler = new RequestSpecBuilder().setBaseUri("https://reqres.in")
-					 .addFilter(RequestLoggingFilter.logRequestTo(objPrintStream))
+					.addFilter(RequestLoggingFilter.logRequestTo(objPrintStream))
 					.addFilter(ResponseLoggingFilter.logResponseTo(objPrintStream)).setContentType("application/json")
 					.build();
 			return objSpecBuiler;
@@ -103,41 +103,40 @@ public class StepDefinition {
 
 	@Given("{string} browser is opened")
 	public void browser_is_opened(String browser) {
-		driver=DriverSetup.getDriver(browser);
+		driver = DriverSetup.getDriver(browser);
 	}
 
 	@When("user opens application url in the browser")
 	public void user_opens_application_url_in_the_browser() {
 		driver.get("https://reqres.in");
-		objHomePage=new HomePage(driver);
+		objHomePage = new HomePage(driver);
 	}
-	
+
 	@Then("user sees Support button is displayed")
-	public void user_sees_Support_button_is_displayed() {		
+	public void user_sees_Support_button_is_displayed() {
 		objHomePage.isSupportReqRespHomePageButton();
-	}	
+	}
 
 	@Then("user sees different request endpoints")
 	public void user_sees_different_request_endpoints() {
-	    
+
 	}
 
 	@Then("user click on {string} with {string} http request")
 	public void user_click_on_with_http_request(String name, String requestType) {
-		objHomePage.clickEachMethodAndVerify(requestType.toLowerCase(),name.trim());
-	}	
-		
+		objHomePage.clickEachMethodAndVerify(requestType.toLowerCase(), name.trim());
+	}
 
 	@Then("users sees {string} and {string} and {string}")
 	public void users_sees_and_and(String request, String responseCode, String response) {
-		System.out.println("request=>"+request+",requestType=>"+responseCode+"response,"+response+"");
-		objHomePage.verifyDetailsForEachMethod(request,responseCode,response);
+		System.out.println("request=>" + request + ",requestType=>" + responseCode + "response," + response + "");
+		objHomePage.verifyDetailsForEachMethod(request, responseCode, response);
 	}
-	
+
 	@Then("user click on SupportReqResp button")
 	public void user_click_on_SupportReqResp_button() {
 		objHomePage.clickSupportReqRespHomePageButton();
-		objSupportPage=new SupportPage(driver);
+		objSupportPage = new SupportPage(driver);
 	}
 
 	@Then("user sees one time support option")
@@ -148,29 +147,34 @@ public class StepDefinition {
 
 	@Then("sees monthlysupport option")
 	public void sees_monthlysupport_option() {
-		objSupportPage.isSupportMonthlyRadioButtonDisplayed();		
+		objSupportPage.isSupportMonthlyRadioButtonDisplayed();
 	}
 
 	@Then("sees SupportReqResp button to upgrade")
 	public void sees_SupportReqResp_button_to_upgrade() {
 		objSupportPage.isSupportReqRespButtonDisplayed();
-	}	
-	
-	@After
-	public void tearDown(Scenario scenario) {		
-		if(driver!=null) {
-			driver.quit();
-		}
-		 if (scenario.isFailed()) {
-             byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-             scenario.attach(screenshot, "image/png", scenario.getName());
-         }
 	}
-	
-	
+
+	@After(order = 1)
+	public void tearDown(Scenario scenario) {
+		if (scenario.isFailed()) {
+			if (driver != null) {
+				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+				scenario.attach(screenshot, "image/png", scenario.getName());
+			}
+		}
+	}
+
+	@After(order = 0)
+	public void tearDown() {
+		if (driver != null) {
+			driver.close();
+		}
+	}
+
 	@Given("Files {string} and {string}")
 	public void files_and(String string, String string2) {
-	   System.out.println("File=>"+string+" and "+ string2+" are uploaded in /app/in");
+		System.out.println("File=>" + string + " and " + string2 + " are uploaded in /app/in");
 	}
 
 	@When("processed in the system")
@@ -180,7 +184,7 @@ public class StepDefinition {
 
 	@Then("verify {string} file")
 	public void verify_file(String string) {
-	   FileComparison.compareTwoFiles(scenario);
+		FileComparison.compareTwoFiles(scenario);
 	}
 
 }
